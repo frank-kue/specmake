@@ -40,6 +40,7 @@ from .pkgitems import (BuildItemFactory, GenericPackageComponent, Redirection,
 from .packagechanges import PackageChanges
 from .packagemanual import PackageManualBuilder, PackageSummary
 from .perfimages import BuildPerformanceImages
+from .qualityscanner import QualityScanner
 from .reposubset import RepositorySubset
 from .rtems import RTEMSItemCache, RTEMSPackageComponent
 from .rtemstestsimages import BuildRTEMSTestsImages
@@ -88,6 +89,8 @@ def create_build_item_factory() -> BuildItemFactory:
     factory.add_constructor("pkg/directory-state/patterns", DirectoryState)
     factory.add_constructor("pkg/directory-state/performance-images",
                             BuildPerformanceImages)
+    factory.add_constructor("pkg/directory-state/quality-scanner",
+                            QualityScanner)
     factory.add_constructor("pkg/directory-state/repository", RepositoryState)
     factory.add_constructor("pkg/directory-state/repository-subset",
                             RepositorySubset)
